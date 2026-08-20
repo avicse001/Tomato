@@ -1,0 +1,248 @@
+.navbar {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+}
+
+.navbar .logo {
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar .logo:hover {
+  transform: scale(1.03);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  color: #49557e;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  padding: 4px 0;
+}
+
+.navbar-menu li:hover {
+  color: #ff4c24;
+}
+
+.navbar .active {
+  color: #ff4c24;
+  font-weight: 600;
+}
+
+.navbar .active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff4c24;
+  border-radius: 2px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-icon-btn:hover {
+  background: #fff0ed;
+  transform: scale(1.1);
+}
+
+.navbar-icon-btn img {
+  width: 22px;
+}
+
+.navbar-search-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-search-icon:hover {
+  transform: scale(1.1);
+}
+
+.navbar-search-icon img {
+  width: 24px;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  min-width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #ff6b4a 0%, #ff4c24 100%);
+  border-radius: 9px;
+  top: -8px;
+  right: -10px;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 2px 6px rgba(255, 76, 36, 0.4);
+}
+
+.sign-in-btn {
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ff4c24;
+  border: 1.5px solid #ff4c24;
+  padding: 8px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background-color: #ff4c24;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 76, 36, 0.3);
+}
+
+.navbar-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-badge-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #fff4f2;
+  border: 1px solid #ffd0c7;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.profile-badge-btn:hover {
+  background: #ffe6e0;
+}
+
+.profile-icon-img {
+  width: 22px;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff4c24;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid #ffe3dc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  min-width: 140px;
+  animation: fadeIn 0.2s ease;
+}
+
+.nav-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #49557e;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-profile-dropdown li:hover {
+  color: #ff4c24;
+}
+
+.nav-profile-dropdown li img {
+  width: 18px;
+}
+
+.nav-profile-dropdown hr {
+  height: 1px;
+  background-color: #f0f0f0;
+  border: none;
+  margin: 2px 0;
+}
+
+.mobile-hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+@media (max-width: 850px) {
+  .mobile-hamburger-btn {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: none;
+    border: 1px solid #f0f0f0;
+  }
+
+  .navbar-menu.mobile-open {
+    display: flex;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+}

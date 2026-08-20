@@ -1,0 +1,23 @@
+.app {
+  width: 82%;
+  margin: auto;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+@media (max-width: 1200px) {
+  .app {
+    width: 90%;
+  }
+}
+
+@media (max-width: 750px) {
+  .app {
+    width: 94%;
+  }
+}
